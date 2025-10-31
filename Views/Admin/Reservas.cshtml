@@ -1,0 +1,29 @@
+@{
+    Layout = "~/Views/Shared/_Layout.cshtml";
+    ViewData["Title"] = "Reservas";
+    ViewData["Role"] = "Admin";
+    ViewData["Active"] = "Reservas";
+}
+
+<section class="section mb-3">
+    <h2>Reservas</h2>
+    <p class="subtitle">Gerenciar reservas de áreas comuns</p>
+
+    <div class="card mb-2">
+        <h3>Áreas Disponíveis</h3>
+        <div class="areas-list">
+            <div class="area-item d-flex justify-content-between">
+                <div><span class="icon">📍</span> Churrasqueira 1</div>
+                <span class="status status-green">Disponível</span>
+            </div>
+        </div>
+    </div>
+
+    <div class="card mb-2">
+        <h3>Próximas Reservas</h3>
+        <div class="reserva-item d-flex justify-content-between">
+            <div><span class="icon">📍</span> Churrasqueira 1 - 15/10/2025 · 14:00 · Apto 301</div>
+            <span class="status status-green">Confirmada</span>
+        </div>
+    </div>
+</section>

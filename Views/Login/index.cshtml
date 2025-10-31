@@ -1,0 +1,46 @@
+@{
+    ViewData["Title"] = "Login Condomínio";
+}
+
+<link rel="stylesheet" href="~/css/style.css" />
+
+<div class="container">
+    <!-- Acesso Administrador -->
+    <div class="card admin-card">
+        <div class="icon-circle admin-icon">🛡️</div>
+        <h2>Acesso Administrador</h2>
+        <p>Entre com suas credenciais de administrador</p>
+
+        <form method="post">
+            <input type="hidden" name="tipo" value="admin" />
+            <label>Email</label>
+            <input type="email" name="email" placeholder="admin@condominio.com" />
+            <label>Senha</label>
+            <input type="password" name="senha" placeholder="••••••••" />
+            <button class="btn btn-admin" type="submit">Entrar como Administrador</button>
+        </form>
+    </div>
+
+    <div class="divider">ou</div>
+
+    <!-- Acesso Morador -->
+    <div class="card resident-card">
+        <div class="icon-circle resident-icon">👤</div>
+        <h2>Acesso Morador</h2>
+        <p>Entre com suas credenciais de morador</p>
+
+        <form method="post">
+            <input type="hidden" name="tipo" value="morador" />
+            <label>Email</label>
+            <input type="email" name="email" placeholder="morador@email.com" />
+            <label>Senha</label>
+            <input type="password" name="senha" placeholder="••••••••" />
+            <button class="btn btn-resident" type="submit">Entrar como Morador</button>
+        </form>
+    </div>
+
+    @if(ViewBag.Error != null)
+    {
+        <p style="color:red">@ViewBag.Error</p>
+    }
+</div>

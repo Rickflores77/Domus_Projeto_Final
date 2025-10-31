@@ -1,0 +1,86 @@
+@{
+    Layout = "~/Views/Shared/_Layout.cshtml";
+    ViewData["Title"] = "Configurações";
+    ViewData["Role"] = "Admin";
+    ViewData["Active"] = "Configuracoes";
+}
+
+<section class="section perfil">
+    <h2>Configurações</h2>
+    <p class="descricao">Gerencie suas preferências e perfil</p>
+
+    <div class="card">
+        <h3>Perfil</h3>
+        <p class="sub">Informações pessoais</p>
+
+        <div class="foto-container">
+            <div class="foto">JS</div>
+            <button class="btn btn-secondary">Alterar Foto</button>
+        </div>
+
+        <label>Nome Completo</label>
+        <div class="input mb-2">
+            <span class="icon">👤</span>
+            <input type="text" value="João Silva" class="form-control" disabled />
+        </div>
+
+        <label>Email</label>
+        <div class="input mb-2">
+            <span class="icon">📧</span>
+            <input type="email" value="joao.silva@email.com" class="form-control" disabled />
+        </div>
+
+        <label>Telefone</label>
+        <div class="input mb-2">
+            <span class="icon">📞</span>
+            <input type="tel" value="(11) 98765-4321" class="form-control" disabled />
+        </div>
+
+        <label>Apartamento</label>
+        <div class="input mb-2">
+            <span class="icon">🏠</span>
+            <input type="text" value="Apto 301 - Bloco A" class="form-control" disabled />
+        </div>
+
+        <button class="btn btn-primary mt-2">Salvar Alterações</button>
+    </div>
+
+    <div class="card mt-3">
+        <h3>Segurança</h3>
+        <p class="sub">Gerencie sua senha e segurança</p>
+        <button class="btn btn-secondary w-100">Alterar Senha</button>
+        <p class="info mt-2">Última alteração de senha: 15/09/2025</p>
+    </div>
+
+    <div class="card mt-3">
+        <h3>Notificações</h3>
+        <p class="sub">Configure suas preferências de notificação</p>
+
+        <div class="form-check form-switch">
+            <input class="form-check-input" type="checkbox" id="emailToggle" checked>
+            <label class="form-check-label" for="emailToggle">Email: Receber notificações por email</label>
+        </div>
+
+        <div class="form-check form-switch mt-2">
+            <input class="form-check-input" type="checkbox" id="pushToggle" checked>
+            <label class="form-check-label" for="pushToggle">Push: Notificações no celular</label>
+        </div>
+
+        <p class="mt-2">Tipos de notificação:</p>
+        <div class="form-check form-switch">
+            <input class="form-check-input" type="checkbox" id="reservasToggle" checked>
+            <label class="form-check-label" for="reservasToggle">Reservas</label>
+        </div>
+        <div class="form-check form-switch">
+            <input class="form-check-input" type="checkbox" id="manutencoesToggle" checked>
+            <label class="form-check-label" for="manutencoesToggle">Manutenções</label>
+        </div>
+    </div>
+
+    <div class="card mt-3">
+        <h3>Sobre o App</h3>
+        <p><strong>Versão:</strong> 1.0.0</p>
+        <p><strong>Condomínio:</strong> Residencial Jardim</p>
+        <a href="#">Termos de Uso e Privacidade</a>
+    </div>
+</section>

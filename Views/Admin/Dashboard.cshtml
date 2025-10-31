@@ -1,0 +1,33 @@
+@{
+    Layout = "~/Views/Shared/_Layout.cshtml";
+    ViewData["Title"] = "Dashboard Admin";
+    ViewData["Role"] = "Admin";      // ⚠️ deve bater com o layout
+    ViewData["Active"] = "Dashboard"; // ativa o menu inferior
+}
+
+<section class="dashboard-header">
+    <h2>Dashboard Administrativo</h2>
+    <p>Visão geral do condomínio</p>
+</section>
+
+<section class="card">
+    <h3>Resumo Condominial</h3>
+    <div class="resumo d-flex justify-content-between flex-wrap">
+        <div class="resumo-box p-3 border m-1 text-center">
+            <p>Total de Moradores</p>
+            <h3>120</h3>
+        </div>
+        <div class="resumo-box p-3 border m-1 text-center">
+            <p>Reservas Ativas</p>
+            <h3>8</h3>
+        </div>
+        <div class="resumo-box p-3 border m-1 text-center">
+            <p>Mensagens Não Lidas</p>
+            <h3>5</h3>
+        </div>
+        <div class="resumo-box p-3 border m-1 text-center">
+            <p>Visitantes Hoje</p>
+            <h3>10</h3>
+        </div>
+    </div>
+</section>

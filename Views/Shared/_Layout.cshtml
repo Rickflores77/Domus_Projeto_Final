@@ -1,0 +1,82 @@
+﻿<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>
+        @if (IsSectionDefined("Title"))
+        {
+            @RenderSection("Title")
+        }
+        else
+        {
+            @ViewData["Title"]
+        } - Domus_Projeto
+    </title>
+    <link rel="stylesheet" href="~/lib/bootstrap/dist/css/bootstrap.min.css" />
+    <link rel="stylesheet" href="~/css/site.css" asp-append-version="true" />
+    <link rel="stylesheet" href="~/Domus_Projeto.styles.css" asp-append-version="true" />
+</head>
+<body>
+    <header class="header bg-white border-bottom mb-3">
+        <nav class="navbar navbar-expand-sm navbar-light container-fluid">
+            <a class="navbar-brand" asp-controller="Home" asp-action="Index">Domus_Projeto</a>
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target=".navbar-collapse"
+                    aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="navbar-collapse collapse d-sm-inline-flex justify-content-between">
+                <ul class="navbar-nav flex-grow-1">
+                    <li class="nav-item">
+                        <a class="nav-link text-dark" asp-controller="Home" asp-action="Index">Home</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link text-dark" asp-controller="Home" asp-action="Privacy">Privacy</a>
+                    </li>
+                </ul>
+                <button class="btn btn-outline-secondary">⤴ Logout</button>
+            </div>
+        </nav>
+    </header>
+
+    <div class="container">
+        <main role="main" class="pb-3">
+            @RenderBody()
+        </main>
+    </div>
+
+    <!-- ===== NAV INFERIOR PERSONALIZADA POR ROLE ===== -->
+    <nav class="bottom-nav navbar fixed-bottom bg-light border-top d-flex justify-content-around">
+        @if (ViewData["Role"]?.ToString() == "Morador")
+        {
+            <a class="nav-item @(ViewData["Active"]?.ToString() == "Dashboard" ? "active" : "")" asp-controller="Morador" asp-action="Dashboard">🏠<span>Dashboard</span></a>
+            <a class="nav-item @(ViewData["Active"]?.ToString() == "Financas" ? "active" : "")" asp-controller="Morador" asp-action="Financas">💲<span>Finanças</span></a>
+            <a class="nav-item @(ViewData["Active"]?.ToString() == "Reservas" ? "active" : "")" asp-controller="Morador" asp-action="Reservas">📅<span>Reservas</span></a>
+            <a class="nav-item @(ViewData["Active"]?.ToString() == "Documentos" ? "active" : "")" asp-controller="Morador" asp-action="Documentos">📄<span>Documentos</span></a>
+            <a class="nav-item @(ViewData["Active"]?.ToString() == "Visitantes" ? "active" : "")" asp-controller="Morador" asp-action="Visitantes">👥<span>Visitantes</span></a>
+            <a class="nav-item @(ViewData["Active"]?.ToString() == "Mensagens" ? "active" : "")" asp-controller="Morador" asp-action="Mensagens">💬<span>Mensagens</span></a>
+            <a class="nav-item @(ViewData["Active"]?.ToString() == "Configuracoes" ? "active" : "")" asp-controller="Morador" asp-action="Configuracoes">⚙️<span>Configurações</span></a>
+        }
+        else if (ViewData["Role"]?.ToString() == "Admin")
+        {
+            <a class="nav-item @(ViewData["Active"]?.ToString() == "Dashboard" ? "active" : "")" asp-controller="Admin" asp-action="Dashboard">🏠<span>Dashboard</span></a>
+            <a class="nav-item @(ViewData["Active"]?.ToString() == "Vistorias" ? "active" : "")" asp-controller="Admin" asp-action="Vistorias">🔍<span>Vistorias</span></a>
+            <a class="nav-item @(ViewData["Active"]?.ToString() == "Mensagens" ? "active" : "")" asp-controller="Admin" asp-action="Mensagens">💬<span>Mensagens</span></a>
+            <a class="nav-item @(ViewData["Active"]?.ToString() == "Financas" ? "active" : "")" asp-controller="Admin" asp-action="Financas">💰<span>Finanças</span></a>
+            <a class="nav-item @(ViewData["Active"]?.ToString() == "Reservas" ? "active" : "")" asp-controller="Admin" asp-action="Reservas">📅<span>Reservas</span></a>
+            <a class="nav-item @(ViewData["Active"]?.ToString() == "Documentos" ? "active" : "")" asp-controller="Admin" asp-action="Documentos">📄<span>Documentos</span></a>
+            <a class="nav-item @(ViewData["Active"]?.ToString() == "Manutencao" ? "active" : "")" asp-controller="Admin" asp-action="Manutencao">🛠️<span>Manutenção</span></a>
+            <a class="nav-item @(ViewData["Active"]?.ToString() == "Configuracoes" ? "active" : "")" asp-controller="Admin" asp-action="Configuracoes">⚙️<span>Configurações</span></a>
+        }
+    </nav>
+
+    <footer class="border-top footer text-muted mt-3">
+        <div class="container">&copy; 2025 - Domus_Projeto</div>
+    </footer>
+
+    <script src="~/lib/jquery/dist/jquery.min.js"></script>
+    <script src="~/lib/bootstrap/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="~/js/site.js" asp-append-version="true"></script>
+    @await RenderSectionAsync("Scripts", required: false)
+</body>
+</html>

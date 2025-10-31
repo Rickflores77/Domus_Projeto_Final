@@ -1,0 +1,50 @@
+@{
+    Layout = "~/Views/Shared/_Layout.cshtml";
+    ViewData["Title"] = "Documentos";
+    ViewData["Role"] = "Admin";
+    ViewData["Active"] = "Documentos";
+}
+
+<section class="intro mb-3">
+    <h2>Documentos e Votações</h2>
+    <p>Acesse documentos oficiais e participe de votações</p>
+</section>
+
+<section class="votacoes-ativas card mb-3">
+    <h3>Votações Ativas</h3>
+    <p class="sub">Participe das decisões do condomínio</p>
+
+    <div class="votacao card p-2 mb-2">
+        <h4>📄 Reforma da Piscina</h4>
+        <p>Aprovação do projeto de reforma e modernização da área da piscina</p>
+        <p>🗓️ Termina em 20/10/2025</p>
+        <div class="progress mb-1">
+            <div class="progress-bar" style="width:56%"></div>
+        </div>
+        <p>Participação: 45 de 80 votos</p>
+        <button class="btn btn-primary btn-sm">Votar Agora</button>
+    </div>
+
+    <div class="votacao votado card p-2 mb-2">
+        <h4>📷 Instalação de Câmeras de Segurança <span class="badge bg-success">Votado</span></h4>
+        <p>Instalação de sistema de câmeras nas áreas comuns</p>
+        <p>🗓️ Termina em 25/10/2025</p>
+        <div class="progress mb-1">
+            <div class="progress-bar" style="width:65%"></div>
+        </div>
+        <p>Participação: 52 de 80 votos</p>
+        <p>Seu voto: <strong>Aprovar</strong></p>
+    </div>
+</section>
+
+<section class="documentos card mb-3">
+    <h3>Documentos Oficiais</h3>
+    <p class="sub">Acesse a documentação do condomínio</p>
+    <ul class="list-group">
+        <li class="list-group-item">📘 Convenção do Condomínio - 15/03/2025 • 2.4 MB</li>
+        <li class="list-group-item">📘 Regimento Interno - 10/03/2025 • 1.8 MB</li>
+        <li class="list-group-item">📘 Ata da Última Assembleia - 28/09/2025 • 850 KB</li>
+        <li class="list-group-item">📘 Orçamento Anual 2025 - 05/01/2025 • 1.2 MB</li>
+        <li class="list-group-item">📘 Normas de Uso das Áreas Comuns - 20/02/2025 • 650 KB</li>
+    </ul>
+</section>

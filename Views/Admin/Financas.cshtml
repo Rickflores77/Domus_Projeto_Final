@@ -1,0 +1,95 @@
+@{
+    Layout = "~/Views/Shared/_Layout.cshtml";
+    ViewData["Title"] = "Finanças";
+    ViewData["Role"] = "Admin";
+    ViewData["Active"] = "Financas";
+}
+
+<section class="header-section mb-3">
+    <h3>Finanças</h3>
+    <p class="subtitle">Gestão financeira do condomínio</p>
+</section>
+
+<section class="cards d-flex gap-2 mb-3">
+    <div class="card positive p-2 flex-fill">
+        <p class="title">R$ 45.680,00</p>
+        <p class="desc">Receitas do Mês</p>
+        <span class="percent up">+12%</span>
+    </div>
+    <div class="card negative p-2 flex-fill">
+        <p class="title">R$ 28.340,00</p>
+        <p class="desc">Despesas do Mês</p>
+        <span class="percent down">-5%</span>
+    </div>
+    <div class="card neutral p-2 flex-fill">
+        <p class="title">R$ 17.340,00</p>
+        <p class="desc">Saldo do Mês</p>
+        <span class="icon">💲</span>
+    </div>
+    <div class="card neutral p-2 flex-fill">
+        <p class="title">R$ 3.250,00</p>
+        <p class="desc">Valores Pendentes</p>
+        <span class="icon">📄</span>
+    </div>
+</section>
+
+<section class="chart mb-3">
+    <h4>Receitas vs Despesas</h4>
+    <p class="subtitle">Últimos 5 meses</p>
+    <div class="chart-box bars d-flex justify-content-between">
+        <div class="bar-group">
+            <div class="bar red" style="height:60%;"></div>
+            <div class="bar blue" style="height:80%;"></div>
+            <span>Jun</span>
+        </div>
+        <div class="bar-group">
+            <div class="bar red" style="height:50%;"></div>
+            <div class="bar blue" style="height:90%;"></div>
+            <span>Jul</span>
+        </div>
+        <div class="bar-group">
+            <div class="bar red" style="height:55%;"></div>
+            <div class="bar blue" style="height:75%;"></div>
+            <span>Ago</span>
+        </div>
+        <div class="bar-group">
+            <div class="bar red" style="height:45%;"></div>
+            <div class="bar blue" style="height:70%;"></div>
+            <span>Set</span>
+        </div>
+        <div class="bar-group">
+            <div class="bar red" style="height:50%;"></div>
+            <div class="bar blue" style="height:85%;"></div>
+            <span>Out</span>
+        </div>
+    </div>
+</section>
+
+<section class="payments mb-3">
+    <h4>Histórico de Pagamentos</h4>
+    <p class="subtitle">Pagamentos recentes dos moradores</p>
+
+    <div class="payment d-flex justify-content-between mb-2">
+        <div>
+            <p><strong>Apto 301</strong></p>
+            <span class="date">05/10/2025</span>
+        </div>
+        <div class="amount text-end">
+            <span>R$ 650,00</span>
+            <span class="status pago">Pago</span>
+        </div>
+    </div>
+
+    <div class="payment d-flex justify-content-between mb-2">
+        <div>
+            <p><strong>Apto 408</strong></p>
+            <span class="date">Vencido</span>
+        </div>
+        <div class="amount text-end">
+            <span>R$ 650,00</span>
+            <span class="status vencido">Vencido</span>
+        </div>
+    </div>
+</section>
+
+<button class="btn btn-primary">📄 Emitir Boletos</button>

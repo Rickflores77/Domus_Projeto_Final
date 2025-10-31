@@ -1,0 +1,49 @@
+@{
+    ViewData["Title"] = "Mensagens";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<section class="card">
+    <h3>Mensagens</h3>
+    <p class="subtitle">Comunicação com a administração</p>
+
+    <div class="conversas">
+        <div class="conversa nova">
+            <div class="icon">🛡️</div>
+            <div class="conteudo">
+                <strong>Administração</strong>
+                <p class="mensagem">Problema no interfone resolvido</p>
+                <small>10 min atrás</small>
+            </div>
+            <span class="badge novo">Novo</span>
+        </div>
+
+        <div class="conversa nova">
+            <div class="icon">🛡️</div>
+            <div class="conteudo">
+                <strong>Administração</strong>
+                <p class="mensagem">Solicitação de reserva aprovada</p>
+                <small>1h atrás</small>
+            </div>
+            <span class="badge novo">Novo</span>
+        </div>
+
+        <div class="conversa">
+            <div class="icon">🛡️</div>
+            <div class="conteudo">
+                <strong>Administração</strong>
+                <p class="mensagem">O boleto foi enviado por email</p>
+                <small>2h atrás</small>
+            </div>
+        </div>
+    </div>
+</section>
+
+<section class="card ajuda">
+    <h4>Precisa de ajuda?</h4>
+    <p class="subtitle">Assuntos comuns</p>
+
+    <button class="btn-assunto">💬 Dúvida sobre boleto</button>
+    <button class="btn-assunto">💬 Fazer uma reserva</button>
+    <button class="btn-assunto">💬 Reportar problema</button>
+</section>

@@ -1,0 +1,96 @@
+@{
+    ViewData["Title"] = "Documentos";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<section class="intro">
+    <h2>Documentos e Votações</h2>
+    <p>Acesse documentos oficiais e participe de votações</p>
+</section>
+
+<section class="card">
+    <h3>Votações Ativas</h3>
+    <p class="subtitle">Participe das decisões do condomínio</p>
+
+    <div class="votacao ativa">
+        <div class="votacao-info">
+            <p class="titulo">Reforma da Piscina</p>
+            <small>Aprovação do projeto de reforma e modernização da área da piscina</small>
+            <p class="data">🕒 Termina em 20/10/2025</p>
+            <p class="progresso">Participação <b>45 de 80 votos</b></p>
+            <div class="progress-bar">
+                <div style="width: 56%;"></div>
+            </div>
+            <button class="btn-votar">Votar Agora</button>
+        </div>
+    </div>
+
+    <div class="votacao votado">
+        <div class="votacao-info">
+            <p class="titulo">Instalação de Câmeras de Segurança <span class="status aprovado">Votado</span></p>
+            <small>Instalação de sistema de câmeras nas áreas comuns</small>
+            <p class="data">🕒 Termina em 25/10/2025</p>
+            <p class="progresso">Participação <b>52 de 80 votos</b></p>
+            <div class="progress-bar">
+                <div style="width: 65%;"></div>
+            </div>
+            <p class="resultado">
+                Seu voto: <b>Aprovar</b><br>
+                Aprovar: 42 (81%) | Rejeitar: 6 (12%) | Abstenção: 4 (8%)
+            </p>
+        </div>
+    </div>
+</section>
+
+<section class="card">
+    <h3>Documentos Oficiais</h3>
+    <p class="subtitle">Acesse a documentação do condomínio</p>
+
+    <div class="documento">
+        <span class="icon">📄</span>
+        <div>
+            <p>Convenção do Condomínio</p>
+            <small>15/03/2025 • 2.4 MB</small>
+        </div>
+        <button class="download">⬇</button>
+    </div>
+
+    <div class="documento">
+        <span class="icon">📄</span>
+        <div>
+            <p>Regimento Interno</p>
+            <small>10/03/2025 • 1.8 MB</small>
+        </div>
+        <button class="download">⬇</button>
+    </div>
+
+    <div class="documento">
+        <span class="icon">📄</span>
+        <div>
+            <p>Ata da Última Assembleia</p>
+            <small>28/09/2025 • 850 KB</small>
+        </div>
+        <button class="download">⬇</button>
+    </div>
+</section>
+
+<section class="card">
+    <h3>Votações Encerradas</h3>
+    <p class="subtitle">Resultados de votações anteriores</p>
+
+    <div class="votacao encerrada">
+        <div class="votacao-info">
+            <p class="titulo">Mudança de Síndico <span class="status aprovado">Aprovado</span></p>
+            <small>Encerrada em 05/10/2025</small>
+            <p>68 votos a favor, 12 contra</p>
+        </div>
+    </div>
+
+    <div class="votacao encerrada">
+        <div class="votacao-info">
+            <p class="titulo">Aumento da Taxa Condominial <span class="status rejeitado">Rejeitado</span></p>
+            <small>Encerrada em 28/09/2025</small>
+            <p>55 votos a favor, 55 contra</p>
+        </div>
+    </div>
+</section>

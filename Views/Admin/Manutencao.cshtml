@@ -1,0 +1,54 @@
+@{
+    Layout = "~/Views/Shared/_Layout.cshtml";
+    ViewData["Title"] = "Manutenção";
+    ViewData["Role"] = "Admin";
+    ViewData["Active"] = "Manutencao";
+}
+
+<section class="section-top mb-3">
+    <div class="d-flex justify-content-between align-items-center mb-2">
+        <h3>Manutenção</h3>
+        <button class="btn btn-primary">＋ Adicionar</button>
+    </div>
+
+    <div class="status-cards d-flex gap-2">
+        <div class="card text-center p-2 flex-fill">
+            <span>🕒</span>
+            <p class="number">2</p>
+            <p>Pendentes</p>
+        </div>
+        <div class="card text-center p-2 flex-fill">
+            <span>🔧</span>
+            <p class="number">2</p>
+            <p>Em Andamento</p>
+        </div>
+        <div class="card text-center p-2 flex-fill">
+            <span>⚠️</span>
+            <p class="number">1</p>
+            <p>Urgentes</p>
+        </div>
+    </div>
+</section>
+
+<section class="manutencoes-ativas mb-3">
+    <h4>Manutenções Ativas</h4>
+    <div class="card p-2 mb-2">
+        <h5>Elevador 1</h5>
+        <p>Barulho estranho ao descer</p>
+        <small>Registrado em 10/10/2025 | Técnico: A confirmar</small>
+    </div>
+    <div class="card p-2 mb-2">
+        <h5>Interfone Apto 205</h5>
+        <p>Não está funcionando</p>
+        <small>Registrado em 09/10/2025 | Técnico: João Técnico | Previsão: 15/10/2025</small>
+    </div>
+</section>
+
+<section class="manutencoes-concluidas">
+    <h4>Manutenções Concluídas</h4>
+    <div class="card p-2 mb-2">
+        <h5>Elevador 2</h5>
+        <p>Manutenção preventiva</p>
+        <small>Concluído em 12/10/2025 | Técnico: Empresa Elevadores XYZ</small>
+    </div>
+</section>

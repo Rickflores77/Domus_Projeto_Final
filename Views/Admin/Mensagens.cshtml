@@ -1,0 +1,28 @@
+@{
+    Layout = "~/Views/Shared/_Layout.cshtml";
+    ViewData["Title"] = "Mensagens";
+    ViewData["Role"] = "Admin";
+    ViewData["Active"] = "Mensagens";
+}
+
+<section class="section-top mb-3">
+    <h3>Mensagens</h3>
+    <p class="subtitle">Comunicação com moradores</p>
+</section>
+
+<section class="mensagens-recentes">
+    <h4>Conversas</h4>
+    <p class="subtitle">Mensagens recentes</p>
+
+    <div class="mensagem-card nova d-flex mb-2">
+        <div class="icone">👤</div>
+        <div class="conteudo ms-2">
+            <div class="topo d-flex justify-content-between">
+                <h5>Apto 301</h5>
+                <span class="tag novo">Novo</span>
+            </div>
+            <p class="texto">Problema no interfone resolvido</p>
+            <span class="tempo">10 min atrás</span>
+        </div>
+    </div>
+</section>
