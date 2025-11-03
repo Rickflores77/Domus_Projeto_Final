@@ -13,6 +13,18 @@
       "PackagePath": "staticwebassets\\favicon.ico"
     },
     {
+      "Id": "C:\\Users\\426115624\\Documents\\Domus Projeto\\wwwroot\\js\\dashboard.js",
+      "PackagePath": "staticwebassets\\js\\dashboard.js"
+    },
+    {
+      "Id": "C:\\Users\\426115624\\Documents\\Domus Projeto\\wwwroot\\js\\documentos.js",
+      "PackagePath": "staticwebassets\\js\\documentos.js"
+    },
+    {
+      "Id": "C:\\Users\\426115624\\Documents\\Domus Projeto\\wwwroot\\js\\financas.js",
+      "PackagePath": "staticwebassets\\js\\financas.js"
+    },
+    {
       "Id": "C:\\Users\\426115624\\Documents\\Domus Projeto\\wwwroot\\js\\site.js",
       "PackagePath": "staticwebassets\\js\\site.js"
     },

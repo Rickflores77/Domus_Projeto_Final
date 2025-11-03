@@ -1,16 +1,23 @@
 using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Threading.Tasks;
+using System.ComponentModel.DataAnnotations;
 
 namespace Domus_Projeto.Models
 {
     public class Mensagem
     {
-           public int Id { get; set; }   
-         public string Remetente { get; set; } 
-        public string Conteudo { get; set; }
-        public DateTime DataEnvio { get; set; }
-        public bool Nova { get; set; }
+        [Key]
+        public int Id { get; set; }
+
+        [Required]
+        public string Remetente { get; set; } = string.Empty;
+
+        [Required]
+        public string Conteudo { get; set; } = string.Empty;
+
+        public DateTime EnviadoEm { get; set; } = DateTime.Now;
+
+        public bool Lida { get; set; } = false;
+
+        public int? MoradorId { get; set; } // opcional para relacionar
     }
 }

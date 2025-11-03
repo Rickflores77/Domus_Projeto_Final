@@ -1,16 +1,23 @@
 using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Threading.Tasks;
+using System.ComponentModel.DataAnnotations;
 
 namespace Domus_Projeto.Models
 {
     public class Visitante
     {
-           public int Id { get; set; }   
-        public string Nome { get; set; }
-        public string RG { get; set; }
-        public DateTime DataVisita { get; set; }
-        public string Status { get; set; }
+        [Key]
+        public int Id { get; set; }
+
+        [Required]
+        public string Nome { get; set; } = string.Empty;
+
+        [Required]
+        public string RG { get; set; } = string.Empty;
+
+        public DateTime DataHora { get; set; }
+
+        public string Status { get; set; } = "Agendado"; // Agendado, Ativo, Concluído
+
+        public int? MoradorId { get; set; }
     }
 }

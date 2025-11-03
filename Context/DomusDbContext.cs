@@ -13,6 +13,10 @@ public class DomusDbContext : DbContext
     public DbSet<Visitante> Visitantes { get; set; } = null!;
     public DbSet<Documento> Documentos { get; set; } = null!;
     public DbSet<Votacao> Votacoes { get; set; } = null!;
+    public DbSet<Financa> Financas { get; set; } = null!;
+    public DbSet<Mensagem> Mensagens { get; set; } = null!;
+
+
     protected override void OnModelCreating(ModelBuilder modelBuilder)
     {
         base.OnModelCreating(modelBuilder);

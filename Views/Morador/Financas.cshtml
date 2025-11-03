@@ -143,23 +143,35 @@
 </section>
 
 <button class="btn-pagar">💳 Pagar Contas Pendentes</button>
+@model List<Domus_Projeto.Models.Financa>
 
-@section Scripts{
-<script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
-<script>
-    const ctx = document.getElementById('gastosChart');
-    new Chart(ctx, {
-      type: 'bar',
-      data: {
-        labels: ['Jun', 'Jul', 'Ago', 'Set', 'Out'],
-        datasets: [
-          { label: 'Condomínio', data: [650, 650, 650, 650, 650], backgroundColor: '#4b5563' },
-          { label: 'Gás', data: [65, 65, 65, 65, 65], backgroundColor: '#f97316' },
-          { label: 'Luz', data: [135, 140, 142, 138, 145], backgroundColor: '#facc15' },
-          { label: 'Água', data: [78, 80, 82, 85, 88], backgroundColor: '#3b82f6' }
-        ]
-      },
-      options: { responsive: true, plugins: { legend: { display: false } }, scales: { y: { beginAtZero: true } } }
-    });
-</script>
+<section class="card">
+    <h3>Contas do Mês</h3>
+    <p class="subtitle">Outubro 2025</p>
+
+    @foreach (var f in Model)
+    {
+        <div class="bill">
+            <div class="bill-info">
+                <span class="icon">@f.Descricao</span>
+                <div>
+                    <p>@f.Descricao</p>
+                    <small>Venc: @f.Data.ToString("dd/MM/yyyy")</small>
+                </div>
+            </div>
+            <div class="bill-value">
+                <p>R$ @f.Valor</p>
+                <span class="status @(f.Status.ToLower())">@f.Status</span>
+
+                @if (f.Status == "Pendente")
+                {
+                    <form method="post" asp-action="PagarFinanca" asp-route-id="@f.Id">
+                        <button type="submit" class="btn-pagar">💳 Pagar</button>
+                    </form>
+                }
+            </div>
+        </div>
+    }
+</section>
+
 }
