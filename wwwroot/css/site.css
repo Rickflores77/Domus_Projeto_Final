@@ -1,22 +1,315 @@
+/* ========================================
+   VARIÁVEIS DE COR E BASE
+======================================== */
+:root {
+  --cor-primaria: #2563EB;       /* Azul médio */
+  --cor-secundaria: #BFDBFE;     /* Azul claro */
+  --cor-destaque: #C084FC;       /* Roxo claro */
+  --cor-fundo: #FFFFFF;           /* Branco */
+  --cor-texto: #374151;           /* Cinza escuro */
+  --cor-borda: #E5E7EB;
+  --font-base: "Segoe UI", Roboto, sans-serif;
+  --font-titulo: "Segoe UI Semibold", Roboto, sans-serif;
+  --radius: 1rem;
+  --transition: 0.3s ease;
+}
+
+/* ========================================
+   BASE GLOBAL
+======================================== */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
 html {
-  font-size: 14px;
-}
-
-@media (min-width: 768px) {
-  html {
-    font-size: 16px;
-  }
-}
-
-.btn:focus, .btn:active:focus, .btn-link.nav-link:focus, .form-control:focus, .form-check-input:focus {
-  box-shadow: 0 0 0 0.1rem white, 0 0 0 0.25rem #258cfb;
-}
-
-html {
-  position: relative;
-  min-height: 100%;
+  font-size: 16px;
+  scroll-behavior: smooth;
 }
 
 body {
-  margin-bottom: 60px;
+  font-family: var(--font-base);
+  color: var(--cor-texto);
+  background-color: var(--cor-fundo);
+  display: flex;
+  flex-direction: column;
+  min-height: 100vh;
+  line-height: 1.7;
+}
+
+main {
+  flex: 1;
+  padding: 2.5rem 1.5rem;
+  max-width: 1400px;
+  margin: 0 auto;
+  width: 100%;
+}
+
+/* ========================================
+   LINKS GLOBAIS
+======================================== */
+a {
+  color: var(--cor-primaria);
+  text-decoration: none;
+  transition: color var(--transition);
+}
+
+a:hover {
+  color: #1D4ED8; /* Azul mais intenso no hover */
+}
+
+a.navbar-brand {
+  display: block;
+  text-align: center;
+  font-weight: 600;
+  font-size: 1.6rem;
+  line-height: 1.4;
+  letter-spacing: 1px;
+  color: var(--cor-primaria) !important;
+  word-break: break-word;
+}
+
+/* ========================================
+   BOTÕES
+======================================== */
+button,
+.btn {
+  background: var(--cor-primaria);
+  color: #fff;
+  border: none;
+  border-radius: 2rem;
+  padding: 0.7rem 1.4rem;
+  font-size: 1rem;
+  font-weight: 500;
+  cursor: pointer;
+  transition: all var(--transition);
+  min-width: 110px;
+  line-height: 1.4;
+}
+
+button:hover,
+.btn:hover {
+  background: linear-gradient(145deg, #1E40AF, #2563EB);
+  box-shadow: 0 6px 16px rgba(37, 99, 235, 0.2);
+  transform: translateY(-2px);
+}
+
+.btn-secondary {
+  background: var(--cor-destaque);
+}
+
+.btn-secondary:hover {
+  background: linear-gradient(145deg, #A855F7, #C084FC);
+}
+
+/* ========================================
+   NAV PILLS
+======================================== */
+.nav-pills .nav-link.active,
+.nav-pills .show > .nav-link {
+  color: #fff;
+  background-color: var(--cor-primaria);
+  border-radius: 1rem;
+  padding: 0.6rem 1.2rem;
+  margin: 0.3rem;
+  font-weight: 600;
+}
+
+/* ========================================
+   BORDAS E SOMBRAS
+======================================== */
+.border-top {
+  border-top: 1px solid var(--cor-borda);
+}
+.border-bottom {
+  border-bottom: 1px solid var(--cor-borda);
+}
+.box-shadow {
+  box-shadow: 0 6px 18px rgba(0, 0, 0, 0.08);
+}
+
+/* ========================================
+   RODAPÉ
+======================================== */
+footer,
+.footer {
+  background-color: var(--cor-secundaria);
+  color: var(--cor-primaria);
+  text-align: center;
+  padding: 1.5rem 1rem;
+  font-size: 0.95rem;
+  border-top: 1px solid var(--cor-borda);
+  box-shadow: 0 -2px 6px rgba(0, 0, 0, 0.05);
+  width: 100%;
+  flex-shrink: 0;
+  margin-top: auto;
+}
+
+footer a {
+  color: var(--cor-primaria);
+  text-decoration: none;
+  transition: color var(--transition);
+}
+
+footer a:hover {
+  color: var(--cor-destaque);
+}
+
+/* ========================================
+   NAV INFERIOR
+======================================== */
+.bottom-nav {
+  background-color: #f8fafc;
+  border-top: 1px solid var(--cor-borda);
+  box-shadow: 0 -2px 8px rgba(0, 0, 0, 0.05);
+  padding: 0.6rem 0;
+  display: flex;
+  justify-content: space-around;
+}
+
+.bottom-nav a {
+  color: var(--cor-texto);
+  font-size: 0.9rem;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  line-height: 1.3;
+  transition: all 0.25s ease;
+}
+
+.bottom-nav a span {
+  font-size: 0.75rem;
+  margin-top: 2px;
+}
+
+.bottom-nav a:hover,
+.bottom-nav a.active {
+  color: var(--cor-primaria);
+  font-weight: 600;
+}
+
+/* ========================================
+   CABEÇALHO
+======================================== */
+.dashboard-header {
+  background: var(--cor-secundaria);
+  border-bottom: 1px solid var(--cor-borda);
+  padding: 2rem 2.5rem;
+  box-shadow: 0 6px 18px rgba(0,0,0,0.04);
+  text-align: left;
+  border-radius: var(--radius) var(--radius) 0 0;
+}
+
+.dashboard-header h2 {
+  color: var(--cor-primaria);
+  font-size: 2rem;
+  font-weight: 700;
+  margin-bottom: 0.5rem;
+  line-height: 1.4;
+  letter-spacing: 0.5px;
+}
+
+.dashboard-header p {
+  color: #4B5563;
+  font-size: 1.05rem;
+  line-height: 1.7;
+}
+
+/* ========================================
+   CARDS
+======================================== */
+.card {
+  background: var(--cor-fundo);
+  border-radius: var(--radius);
+  box-shadow: 0 8px 24px rgba(0, 0, 0, 0.06);
+  padding: 2rem 2.5rem;
+  margin: 2rem auto;
+  width: 95%;
+  max-width: 1200px;
+  line-height: 1.6;
+  transition: all var(--transition);
+}
+
+.card:hover {
+  transform: translateY(-3px);
+  box-shadow: 0 12px 30px rgba(0,0,0,0.08);
+}
+
+.card h3 {
+  color: var(--cor-destaque);
+  font-weight: 600;
+  margin-bottom: 1rem;
+  border-bottom: 2px solid var(--cor-primaria);
+  padding-bottom: 0.4rem;
+  display: inline-block;
+  line-height: 1.3;
+  letter-spacing: 0.5px;
+}
+
+/* ========================================
+   RESUMOS E BOXES
+======================================== */
+.resumo {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+  gap: 2rem;
+  margin-top: 2.5rem;
+}
+
+.resumo-box {
+  background: #F3F4F6;
+  border: 1px solid var(--cor-borda);
+  border-radius: var(--radius);
+  padding: 2rem;
+  text-align: left;
+  transition: all var(--transition);
+}
+
+.resumo-box:hover {
+  background: var(--cor-secundaria);
+  box-shadow: 0 12px 24px rgba(37,99,235,0.12);
+}
+
+.resumo-box p {
+  color: #6B7280;
+  font-size: 1rem;
+  margin-bottom: 0.8rem;
+  letter-spacing: 0.3px;
+}
+
+.resumo-box h3 {
+  color: var(--cor-primaria);
+  font-size: 1.5rem;
+  font-weight: 600;
+  margin-bottom: 0.6rem;
+  letter-spacing: 0.5px;
+}
+
+/* ========================================
+   RESPONSIVIDADE
+======================================== */
+@media (max-width: 768px) {
+  .dashboard-header {
+    padding: 1.5rem 1rem;
+    text-align: center;
+  }
+
+  .card {
+    padding: 1.5rem 2rem;
+  }
+
+  .botoes-container {
+    gap: 0.8rem;
+    justify-content: center;
+  }
+
+  .resumo {
+    gap: 1.2rem;
+  }
+
+  a.navbar-brand {
+    font-size: 1.4rem;
+    line-height: 1.4;
+  }
 }
